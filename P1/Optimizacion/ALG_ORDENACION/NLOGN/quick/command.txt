@@ -1,0 +1,2 @@
+
+plot for [i = 0:3] "quick".i.".dat" pointsize 1.3 linecolor i+4 title "quicksortO".i.".dat" with linespoint
