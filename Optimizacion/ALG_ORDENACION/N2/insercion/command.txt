@@ -1,2 +1,0 @@
-
-plot for [i = 0:3] "ins".i.".dat" pointsize 1.3 linecolor i+4 title "insercionO".i.".dat" with linespoint
