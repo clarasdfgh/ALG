@@ -1,5 +1,5 @@
 INSTRUCCIONES DE COMPILACIÓN:
-  g++ transpuestafuerzabruta.cpp -o dtranspuestafuerzabruta
+  g++ transpuestafuerzabruta.cpp -o transpuestafuerzabruta
   
   
 INSTRUCCIONES DE EJECUCIÓN:
