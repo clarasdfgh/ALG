@@ -1,6 +1,6 @@
 INSTRUCCIONES DE COMPILACIÓN:
-  g++ transpuestafuerzabruta.cpp -o transpuestafuerzabruta
+  g++ traspuestafuerzabruta.cpp -o traspuestafuerzabruta
   
   
 INSTRUCCIONES DE EJECUCIÓN:
-  ./transpuestafuerzabruta >> transpuestafuerzabruta.dat
+  ./traspuestafuerzabruta >> traspuestafuerzabruta.dat
