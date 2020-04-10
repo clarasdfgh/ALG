@@ -1,0 +1,36 @@
+
+
+*******************************************************************************
+Thu Apr 09 16:58:40 2020
+
+
+FIT:    data read from "mezcla_n50_k100_2000.dat" using 1:2
+        format = x:z
+        #datapoints = 20
+        residuals are weighted equally (unit weight)
+
+function used for fitting: Nlogn(x)
+	Nlogn(x) = a*50*x*log(x)+b
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a             b            
+   0 3.8229147652e+12   0.00e+00  3.09e+05    1.000000e+00   1.000000e+00
+  10 5.3123855444e-08  -3.86e-10  3.09e-05    1.601584e-08   4.908264e-06
+
+After 10 iterations the fit converged.
+final sum of squares of residuals : 5.31239e-08
+rel. change during last iteration : -3.86156e-15
+
+degrees of freedom    (FIT_NDF)                        : 18
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 5.43261e-05
+variance of residuals (reduced chisquare) = WSSR/ndf   : 2.95133e-09
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 1.60158e-08      +/- 5.372e-11    (0.3354%)
+b               = 4.90826e-06      +/- 2.349e-05    (478.5%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.856  1.000 
