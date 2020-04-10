@@ -1,6 +1,7 @@
 
+
 *******************************************************************************
-Fri Apr 10 18:29:51 2020
+Fri Apr 10 18:59:29 2020
 
 
 FIT:    data read from "traspuestafuerzabruta.dat"
@@ -9,21 +10,27 @@ FIT:    data read from "traspuestafuerzabruta.dat"
         residuals are weighted equally (unit weight)
 
 function used for fitting: f(x)
-	f(x)=a*x*log(x)**x
+	f(x)=(a*log(x))**(b*x)
 fitted parameters initialized with current variable values
 
-iter      chisq       delta/lim  lambda   a            
-   0 7.1293668200e+34   0.00e+00  6.89e+16    1.000000e+00
-   6 3.8211297611e-01  -1.45e-11  6.89e+10    5.540399e-17
+iter      chisq       delta/lim  lambda   a             b            
+   0 7.9239469926e+31   0.00e+00  7.84e+16    1.000000e+00   1.000000e+00
+  36 2.6929148100e-02  -5.00e-03  7.84e-20    3.007393e-01   3.966629e+00
 
-After 6 iterations the fit converged.
-final sum of squares of residuals : 0.382113
-rel. change during last iteration : -1.45274e-16
+After 36 iterations the fit converged.
+final sum of squares of residuals : 0.0269291
+rel. change during last iteration : -5.00424e-08
 
-degrees of freedom    (FIT_NDF)                        : 14
-rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.165208
-variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0272938
+degrees of freedom    (FIT_NDF)                        : 13
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0455134
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.00207147
 
 Final set of parameters            Asymptotic Standard Error
 =======================            ==========================
-a               = 5.5404e-17       +/- 6.187e-19    (1.117%)
+a               = 0.300739         +/- 9.987e-05    (0.03321%)
+b               = 3.96663          +/- 0.06193      (1.561%)
+
+correlation matrix of the fit parameters:
+                a      b      
+a               1.000 
+b              -0.997  1.000 
