@@ -108,30 +108,20 @@ int main(int argc, char * argv[]){
   vector<int> vFinal = vInicial[0];
   clock_t tantes;
   clock_t tdespues;
+  vector<int> vAux1;
+  vector<int> vAux2;
 
 
   tantes = clock();
   for(int i = 1; i<n_vectores; i++){
-    vector<int> vAux1 = vFinal;
-    vector<int> vAux2 = vInicial[i];
+    vAux1 = vFinal;
+    vAux2 = vInicial[i];
     vFinal.clear();
 
     vFinal = mezclaVectoresOrdenados(vAux1, vAux2);
   }
   tdespues = clock();
 
-    cout << n << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
+  cout << n << " " << k << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
 
-  /*for(int i=0; i<vInicial.size(); i++){
-    vector<int> aux = vInicial[i];
-    for(int j=0; j<aux.size(); j++)
-      cout << aux[j] << " ";
-    cout << endl;
-  }
-
-    cout << endl << endl;
-
-    for(int i=0; i<vFinal.size(); i++){
-      cout << vFinal[i] << " ";
-    }*/
 }
