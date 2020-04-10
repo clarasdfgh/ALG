@@ -1,0 +1,30 @@
+
+
+*******************************************************************************
+Fri Apr 10 14:58:26 2020
+
+
+FIT:    data read from "traspuestafuerzabruta.dat"
+        format = z
+        #datapoints = 15
+        residuals are weighted equally (unit weight)
+
+function used for fitting: f(x)
+	f(x)=a*log(x)**x/x
+fitted parameters initialized with current variable values
+
+iter      chisq       delta/lim  lambda   a            
+   0 8.8074852897e+28   0.00e+00  7.66e+13    1.000000e+00
+   6 2.7485704866e-01  -2.02e-11  7.66e+07    4.985939e-14
+
+After 6 iterations the fit converged.
+final sum of squares of residuals : 0.274857
+rel. change during last iteration : -2.01964e-16
+
+degrees of freedom    (FIT_NDF)                        : 14
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.140117
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0196326
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a               = 4.98594e-14      +/- 4.721e-16    (0.9469%)
