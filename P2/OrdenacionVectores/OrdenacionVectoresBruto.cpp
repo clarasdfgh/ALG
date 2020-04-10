@@ -122,6 +122,6 @@ int main(int argc, char * argv[]){
   }
   tdespues = clock();
 
-  cout << n << " " << k << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
+  cout << k << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
 
 }
