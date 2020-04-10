@@ -1,0 +1,29 @@
+*******************************************************************************
+Fri Apr 10 12:16:08 2020
+
+
+FIT:    data read from 'matrizdyv.dat'
+        format = z
+        x range restricted to [-6.00000 : 24.0000]
+        #datapoints = 12
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+	g(x)=a1*2**x
+fitted parameters initialized with current variable values
+
+	iter      chisq       delta/lim  lambda   a1           
+   0 3.0023996411e+14   0.00e+00  5.00e+06    1.000000e+00
+   5 3.3822220081e-05  -1.74e-09  5.00e+01    1.840500e-08
+
+After 5 iterations the fit converged.
+final sum of squares of residuals : 3.38222e-05
+rel. change during last iteration : -1.74304e-14
+
+degrees of freedom    (FIT_NDF)                        : 11
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0017535
+variance of residuals (reduced chisquare) = WSSR/ndf   : 3.07475e-06
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+a1              = 1.8405e-08       +/- 1.012e-10    (0.5498%)
