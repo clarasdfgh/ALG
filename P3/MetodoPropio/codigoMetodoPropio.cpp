@@ -167,6 +167,8 @@ int main(int argc, char* argv[]){
   //Añadimos al final la primera ciudad
   camino.push_back(ciudades[0]);
 
+  cout << nombre_recorrido << endl;
+
   for(int i = 0; i < camino.size(); i++){
     cout << camino[i].n << " " << camino[i].x << " " << camino[i].y << endl;
   }
