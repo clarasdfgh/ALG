@@ -88,7 +88,7 @@ vector<ciudad> ciudadesCerca(int distancia, int c, vector<vector<int>> D, vector
   ciudad cAux;
 
   for(int i=0; i < D[c].size(); i++){
-    if(i != c && !estaEnCamino(i, camino) && D[c][i] < distancia){
+    if(i != c && !estaEnCamino(i, camino) && D[c][i] <= distancia){
         cAux = getCiudad(i+1, ciudades);
         res.push_back(cAux);
       }
@@ -107,6 +107,22 @@ int menorDist(ciudad cActual, vector<ciudad> ciudades, vector<vector<int>> D, ve
   }
 
   return menorDistancia;
+}
+
+bool renta(int distancia, vector<ciudad> ciudadesCerc, ciudad sigCiudad, ciudad actual, vector<vector<int>> D){
+  bool res = false;
+  int suma = D[actual.n-1][sigCiudad.n-1];
+
+  for(int i = 0; i < ciudadesCerc.size(); i++){
+    suma += D[sigCiudad.n-1][ciudadesCerc[i].n-1];
+  }
+
+  suma = (int)suma/(ciudadesCerc.size()+1);
+
+  if(suma < distancia)
+    res =  true;
+
+  return res;
 }
 
 int main(int argc, char* argv[]){
@@ -143,7 +159,7 @@ int main(int argc, char* argv[]){
     }
 
     //Añadimos las ciudades cercanas al camino si se ha guardado una ciudad con mas de una ciudad cercana
-    if(nCercanas > 1){
+    if(nCercanas > 1 && renta(menorDistancia, ciudadesCercanas, sigCiudad, ciudadActual, D)){
       camino.push_back(sigCiudad);
 
       for(int i = 0; i < ciudadesCercanas.size(); i++){
@@ -167,7 +183,7 @@ int main(int argc, char* argv[]){
   //Añadimos al final la primera ciudad
   camino.push_back(ciudades[0]);
 
-  cout << nombre_recorrido << endl;
+  // cout << nombre_recorrido << endl;
 
   for(int i = 0; i < camino.size(); i++){
     cout << camino[i].n << " " << camino[i].x << " " << camino[i].y << endl;
