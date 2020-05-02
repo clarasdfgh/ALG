@@ -144,6 +144,7 @@ int main(int argc, char* argv[]){
   camino.push_back(ciudadActual);
   menorDistancia = menorDist(ciudadActual, ciudades, D, camino, ciudadCercana);
 
+  //Tiempo
   while(camino.size() < ciudades.size()){
     //Recorre todas las ciudades y guarda la que tenga el mayor numero de ciudades cercanas
     for(int i = 0; i < ciudades.size(); i++){
@@ -182,6 +183,8 @@ int main(int argc, char* argv[]){
 
   //Añadimos al final la primera ciudad
   camino.push_back(ciudades[0]);
+
+  //Tiempo
 
   // cout << nombre_recorrido << endl;
 
