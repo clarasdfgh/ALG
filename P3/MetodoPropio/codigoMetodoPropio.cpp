@@ -138,6 +138,7 @@ int main(int argc, char* argv[]){
   ciudad ciudadCercana; //Ciudad mas cercana a la actual
   int menorDistancia; //Distancia entre la ciudad actual y la mas cercana
   int nCercanas = 0; //Numero de ciudades cercanas a una ciudad
+  int distanciaRecorrida; //Distancia recorrida en el camino total
 
   distancia(ciudades, D);
   ciudad ciudadActual = ciudades[0];
@@ -159,7 +160,7 @@ int main(int argc, char* argv[]){
       }
     }
 
-    //Añadimos las ciudades cercanas al camino si se ha guardado una ciudad con mas de una ciudad cercana
+    //Añadimos las ciudades cercanas al camino si se ha guardado una ciudad con mas de una ciudad cercana y renta ir a ella
     if(nCercanas > 1 && renta(menorDistancia, ciudadesCercanas, sigCiudad, ciudadActual, D)){
       camino.push_back(sigCiudad);
 
@@ -191,5 +192,14 @@ int main(int argc, char* argv[]){
   for(int i = 0; i < camino.size(); i++){
     cout << camino[i].n << " " << camino[i].x << " " << camino[i].y << endl;
   }
+
+  int c1, c2;
+  for(int i=0; i < camino.size()-1; i++){
+    c1 = camino[i].n-1;
+    c2 = camino[i+1].n-1;
+    distanciaRecorrida += D[c1][c2];
+  }
+
+  //cout << "Distancia recorrida: " << distancia;
 
 }
