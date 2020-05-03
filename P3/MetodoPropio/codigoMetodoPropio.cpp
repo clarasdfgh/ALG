@@ -187,7 +187,7 @@ int main(int argc, char* argv[]){
 
   //Tiempo
 
-  // cout << nombre_recorrido << endl;
+  cout << nombre_recorrido << endl;
 
   for(int i = 0; i < camino.size(); i++){
     cout << camino[i].n << " " << camino[i].x << " " << camino[i].y << endl;
@@ -200,6 +200,6 @@ int main(int argc, char* argv[]){
     distanciaRecorrida += D[c1][c2];
   }
 
-  //cout << "Distancia recorrida: " << distancia;
+  cout << "Distancia recorrida: " << distancia;
 
 }
