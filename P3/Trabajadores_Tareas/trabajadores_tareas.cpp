@@ -24,9 +24,11 @@ struct posicion {
 /******************************************************************************/
 void PintaMatriz(int **M, int tamanio);
 void AsignacionGreedy(int **M, int tamanio, int *V);
-void SalidaAsignacion(int *V);
 posicion EncuentraMasBarato(int **M, int tamanio, bool **usados);
+void SalidaAsignacion(int *V);
 int CalculaCoste(int **M, int tamanio, int *V);
+
+
 
 
 /******************************************************************************/
@@ -66,10 +68,9 @@ posicion EncuentraMasBarato(int **M, int tamanio, bool **usados){
 
 /******************************************************************************/
 void AsignacionGreedy(int **M, int tamanio, int *V){
-  bool ocupados[tamanio];               //factibilidad
+  bool ocupados[tamanio];         //factibilidad
   int tareas_asignadas = 0;
   posicion seleccionado;
-    seleccionado.valor = 0;      //inicializamos a 0 para usarlo en la función EncuentraMasBarato
   bool **M_aux = new bool*[tamanio+10];
 
   for (int i = 0; i <= tamanio; i++){
@@ -81,12 +82,12 @@ void AsignacionGreedy(int **M, int tamanio, int *V){
   }
 
   while (tareas_asignadas <= tamanio){
-
     seleccionado = EncuentraMasBarato(M, tamanio, M_aux);
 
     if (!ocupados[seleccionado.trabajador] && V[seleccionado.tarea] == -1){     //Factibilidad
       ocupados[seleccionado.trabajador] = true;
       V[seleccionado.tarea] = seleccionado.trabajador;
+      
       tareas_asignadas++;
     }
   }
@@ -138,6 +139,7 @@ int main(int argc, char** argv){
   for (int i = 0; i <= n; i++){           //Generamos la matriz dinámica e inicializamos el vector solución
       M[i] = (int*)malloc(n*sizeof(int)+10);
       asignacion[i] = -1;
+      
       for (int j = 0; j <= n; j++){
           if (argc==3 && (*argv[2] == 'D' && n <= 4)){           //Modo debug
             cout << endl;
@@ -145,7 +147,6 @@ int main(int argc, char** argv){
             cin >> M[i][j];
           } else{
             M[i][j] = rand() % 90 + 10;     //Numeros aleatorios del 10 al 100
-
       }
     }
   }
