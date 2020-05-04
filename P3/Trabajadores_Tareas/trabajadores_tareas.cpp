@@ -87,7 +87,7 @@ void AsignacionGreedy(int **M, int tamanio, int *V){
     if (!ocupados[seleccionado.trabajador] && V[seleccionado.tarea] == -1){     //Factibilidad
       ocupados[seleccionado.trabajador] = true;
       V[seleccionado.tarea] = seleccionado.trabajador;
-      
+
       tareas_asignadas++;
     }
   }
@@ -139,7 +139,7 @@ int main(int argc, char** argv){
   for (int i = 0; i <= n; i++){           //Generamos la matriz dinámica e inicializamos el vector solución
       M[i] = (int*)malloc(n*sizeof(int)+10);
       asignacion[i] = -1;
-      
+
       for (int j = 0; j <= n; j++){
           if (argc==3 && (*argv[2] == 'D' && n <= 4)){           //Modo debug
             cout << endl;
@@ -156,7 +156,7 @@ int main(int argc, char** argv){
     AsignacionGreedy(M, n, asignacion);
   t_despues = clock();
 
-  if(n <= 7){
+  if(n <= 4){
       PintaMatriz(M, n);
       SalidaAsignacion(asignacion, n);
     }
