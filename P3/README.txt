@@ -1,6 +1,8 @@
 INSTRUCCIONES DE COMPILACIÓN Y EJECUCIÓN
 
 TSP POR CERCANÍA
+g++ TSP_cercania.cpp -o cercania
+./cercania <nombreFichero> (optional <ciudad_inicial> <salida_vector_ciudades> <salida_tiempo>)
 
 TSP POR INSERCIÓN
 g++ TSP_insercion.cpp -o insercion
