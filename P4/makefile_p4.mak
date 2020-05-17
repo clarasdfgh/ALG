@@ -36,6 +36,7 @@ preambulo:
 	@echo JORGE GANGOSO KLÖCK
 	@echo PEDRO JAVIER MORALES LEYVA
 	@echo CLARA Mª ROMERO LARA
+	@echo
 	@echo Universidad de Granada
 	@echo ------------------------------------------------------------
 	@echo
