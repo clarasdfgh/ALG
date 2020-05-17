@@ -7,7 +7,3 @@ Practicas grupales de la asignatura Algorítmica del GII de la UGR
 - [Pedro Morales Leyva](https://github.com/pedrojml13)
 - [Clara Mª Romero Lara](https://github.com/clarasdfgh)
 
-Compilacion del programa de TSP con programación dinámica:
-  g++ -o TSP TSP_PD.cpp
-Ejecución:
-  ./TSP <nombre_fichero>
