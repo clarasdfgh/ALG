@@ -194,7 +194,7 @@ int main(int argc, char* argv[]){
         distancia(ciudades, D);
 
     //MOSTRAR EL NOMBRE DEL RECORRIDO
-    //cout<< nombre_recorrido << endl;
+    cout<< nombre_recorrido << endl;
 
     //MOSTRAR LAS DISTANCIAS ENTRE TODOS
         /* COMENTADO ABAJO*/
@@ -204,13 +204,14 @@ int main(int argc, char* argv[]){
     {
             //Llamada a subTSP
         total = subTSP(0, indices, D);
-        //cout << "Distancia total: " << total << endl;
+        cout << "Distancia total: " << total << endl;
             //Llamada a TSP
         camino = TSP(0, indices, D);
-        //cout << "Camino final: ";
+        cout << "Camino final: ";
         for (int i = 0; i < camino.size(); i++)
         {
-            cout << camino[i]+1 << " " << getCiudad(camino[i], ciudades).x << " " << getCiudad(camino[i], ciudades).y << " " << endl;
+            //cout << camino[i]+1 << " " << getCiudad(camino[i], ciudades).x << " " << getCiudad(camino[i], ciudades).y << " " << endl;
+            cout << camino[i]+1 << " ";
         }
         cout << endl;
     }
