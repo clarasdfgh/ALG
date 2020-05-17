@@ -7,13 +7,13 @@
 #include <iostream>
 #include <cmath>
 #include <climits>
-#include <chrono>
+#include <ctime>
 
     //Compilacion: g++ -o TSP TSP_PD.cpp
     //Ejecucion: ./TSP <nombre_fichero>
 
 using namespace std;
-using namespace std::chrono;
+
 
 map<string, int> memoizacion;
 /*
@@ -198,7 +198,7 @@ int main(int argc, char* argv[]){
 
     //MOSTRAR LAS DISTANCIAS ENTRE TODOS
         /* COMENTADO ABAJO*/
-
+      
     //Cantidad de parámetros ./programa <nombre_fichero>
     if(argc == 2)
     {
