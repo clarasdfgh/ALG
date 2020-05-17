@@ -157,6 +157,20 @@ vector<int> TSP(int actual, vector<int> sin_visitar, vector<vector<int>> D)
     return solucion;
 }
 
+ciudad getCiudad(int indice, vector<ciudad> ciudades){
+  ciudad res;
+  bool encontrado = false;
+
+  for(int i=0; i<ciudades.size() && !encontrado; i++){
+    if(indice+1 == ciudades[i].n){
+      res = ciudades[i];
+      encontrado = true;
+    }
+  }
+
+  return res;
+}
+
 
 int main(int argc, char* argv[]){
 
@@ -180,7 +194,7 @@ int main(int argc, char* argv[]){
         distancia(ciudades, D);
 
     //MOSTRAR EL NOMBRE DEL RECORRIDO
-    cout<< nombre_recorrido << endl;
+    //cout<< nombre_recorrido << endl;
 
     //MOSTRAR LAS DISTANCIAS ENTRE TODOS
         /* COMENTADO ABAJO*/
@@ -190,13 +204,13 @@ int main(int argc, char* argv[]){
     {
             //Llamada a subTSP
         total = subTSP(0, indices, D);
-        cout << "Distancia total: " << total << endl;
+        //cout << "Distancia total: " << total << endl;
             //Llamada a TSP
         camino = TSP(0, indices, D);
-        cout << "Camino final: ";
+        //cout << "Camino final: ";
         for (int i = 0; i < camino.size(); i++)
         {
-            cout << camino[i] << " ";
+            cout << camino[i]+1 << " " << getCiudad(camino[i], ciudades).x << " " << getCiudad(camino[i], ciudades).y << " " << endl;
         }
         cout << endl;
     }
