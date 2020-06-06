@@ -3,10 +3,9 @@
 #include <cstring>
 #include <iostream>
 #include <cmath>
-#include <chrono>
+#include <ctime>
 
 using namespace std;
-using namespace std::chrono;
 
 struct ciudad{
     int n; //Numero de la ciudad
@@ -139,20 +138,25 @@ int main(int argc, char* argv[]){
 
     distancia(ciudades, D);
 
+    clock_t tantes;
+    clock_t tdespues;
+
     //La estructura if-else es para mostrar la información por consola de diferentes formas
     // 1 - ./cercano <nombre_fichero>
     // 2 - ./cercano <nombre_fichero> <ciudad_inicial(int)>
     // 3 - ./cercano <nombre_fichero> <ciudad_inicial(int)> <anything> [para redireccionar la salida a .tsp, devuelve vector de ciudad]
     // 4 - ./cercano <nombre_fichero> <ciudad_inicial(int)> <anything> <anything> [devuelve el tiempo de ejecucion]
 
-    cout<< nombre_recorrido << endl;
+    //cout<< nombre_recorrido << endl;
     //1
     if(argc == 2){
+      tantes = clock();
         vecinoCercano(D, 1, solucion,total);
-        for(int i = 0; i < solucion.size(); i++)
-            cout << solucion[i] << endl;
+        tdespues = clock();
+        // for(int i = 0; i < solucion.size(); i++)
+        //     cout << solucion[i] << endl;
 
-        cout << endl << "Distancia total: " << total << endl;
+        cout << ciudades.size() << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
     }
     //2
     else if(argc == 3){
@@ -172,14 +176,14 @@ int main(int argc, char* argv[]){
     }
     //4
     else if(argc == 5){
-        int n = atoi(argv[2]);
-        high_resolution_clock::time_point tantes, tdespues;
-        duration<double> transcurrido;
-        tantes = high_resolution_clock::now();
-        vecinoCercanoUbicacion(D, ciudades, n, solucionC);
-        tdespues = high_resolution_clock::now();
-        transcurrido = duration_cast<duration<double>>(tdespues-tantes);
-            cout << transcurrido.count() << endl;
+        // int n = atoi(argv[2]);
+        // high_resolution_clock::time_point tantes, tdespues;
+        // duration<double> transcurrido;
+        // tantes = high_resolution_clock::now();
+        // vecinoCercanoUbicacion(D, ciudades, n, solucionC);
+        // tdespues = high_resolution_clock::now();
+        // transcurrido = duration_cast<duration<double>>(tdespues-tantes);
+        //     cout << transcurrido.count() << endl;
     }
     return 0;
 }

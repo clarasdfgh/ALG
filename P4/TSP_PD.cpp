@@ -183,6 +183,9 @@ int main(int argc, char* argv[]){
     int total;              //Coste de la solución
     vector<vector<int>> D;      //Matriz para las Distancias desde la ciudad [i] a la ciudad [i][j]
 
+    clock_t tantes;
+    clock_t tdespues;
+
     //Inicializar los indices sobre los que se busca el camino, quitando la ciudad inicial
         for(int i=0; i<ciudades.size(); i++)
         {
@@ -194,26 +197,29 @@ int main(int argc, char* argv[]){
         distancia(ciudades, D);
 
     //MOSTRAR EL NOMBRE DEL RECORRIDO
-    cout<< nombre_recorrido << endl;
+    //cout<< nombre_recorrido << endl;
 
     //MOSTRAR LAS DISTANCIAS ENTRE TODOS
         /* COMENTADO ABAJO*/
-      
+
     //Cantidad de parámetros ./programa <nombre_fichero>
     if(argc == 2)
     {
+        tantes = clock();
             //Llamada a subTSP
         total = subTSP(0, indices, D);
-        cout << "Distancia total: " << total << endl;
+        //cout << "Distancia total: " << total << endl;
             //Llamada a TSP
         camino = TSP(0, indices, D);
-        cout << "Camino final: ";
+        //cout << "Camino final: ";
+        tdespues = clock();
         for (int i = 0; i < camino.size(); i++)
         {
             //cout << camino[i]+1 << " " << getCiudad(camino[i], ciudades).x << " " << getCiudad(camino[i], ciudades).y << " " << endl;
-            cout << camino[i]+1 << " ";
+            //cout << camino[i]+1 << " ";
         }
-        cout << endl;
+        //cout << endl;
+        cout << ciudades.size() << " " << (double)(tdespues - tantes) / CLOCKS_PER_SEC << endl;
     }
     else
     {
