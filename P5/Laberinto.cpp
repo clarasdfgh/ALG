@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <ctime>
+#include "generador.h"
 
 using namespace std;
 
@@ -9,16 +10,15 @@ struct posMatriz{
   int columna;
 };
 
-const int TAM = 4;
+const int TAM = 7;
 
 int pared = 1;
 int transitable = 0;
 int ruta = 2;
 int rutaEquivocada = 3;
-int matriz[TAM][TAM] = {{0,1,0,0},
-                        {0,0,1,0},
-                        {1,0,0,0},
-                        {1,1,1,0}};
+int matriz[TAM][TAM];
+
+
 vector<posMatriz> rutaFinal;
 int o[] = {0,5,8};
 
@@ -54,9 +54,15 @@ bool buscarRuta(int fila, int columna){
 
 int main(){
 
-  ctime tAntes, tDespues;
+  clock_t tAntes, tDespues;
 
   tAntes = clock();
+
+  srand(time(NULL));
+  generaLaberintoRecursivo(matriz, 0, n, 0, n);
+  abrePuertas(matriz);
+  pintaMatriz(matriz);
+
   bool hayRuta = buscarRuta(0,0);
   tDespues = clock();
 
