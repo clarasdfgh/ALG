@@ -67,6 +67,7 @@ int main(){
   if(hayRuta){
     for(int i = 0; i<rutaFinal.size(); i++)
       cout << rutaFinal[i].fila << ", " << rutaFinal[i].columna << endl;
+      pintaMatriz(matriz);
   }else{
     cout << "No hay ruta";
   }
