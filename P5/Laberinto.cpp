@@ -18,9 +18,7 @@ int ruta = 2;
 int rutaEquivocada = 3;
 int matriz[TAM][TAM];
 
-
 vector<posMatriz> rutaFinal;
-int o[] = {0,5,8};
 
 bool buscarRuta(int fila, int columna){
   bool res;
